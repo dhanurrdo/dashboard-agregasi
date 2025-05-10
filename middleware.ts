@@ -6,14 +6,14 @@ export function middleware(request: NextRequest) {
   const isLoginPage = request.nextUrl.pathname === '/login'
 
   // If user is not authenticated and not on login page, redirect to login
-  if (!isAuthenticated && !isLoginPage) {
-    return NextResponse.redirect(new URL('/login', request.url))
-  }
+  // if (!isAuthenticated && !isLoginPage) {
+  //   return NextResponse.redirect(new URL('/login', request.url))
+  // }
 
   // If user is authenticated and tries to access login page, redirect to dashboard
-  if (isAuthenticated && isLoginPage) {
-    return NextResponse.redirect(new URL('/dashboard', request.url))
-  }
+  // if (isAuthenticated && isLoginPage) {
+  //   return NextResponse.redirect(new URL('/dashboard', request.url))
+  // }
 
   return NextResponse.next()
 }
